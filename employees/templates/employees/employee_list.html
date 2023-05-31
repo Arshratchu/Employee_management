@@ -1,0 +1,44 @@
+<!-- employees/employee_list.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee List</title>
+</head>
+<body>
+    <h1>Employee List</h1>
+
+    <div>
+        <a href="{% url 'employee_search' %}">Search Employees</a>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Mobile</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+            <tr>
+                <td>{{ employee.first_name }}</td>
+                <td>{{ employee.last_name }}</td>
+                <td>{{ employee.mobile }}</td>
+                <td>{{ employee.email }}</td>
+                <td>
+                    <a href="{% url 'employee_update' pk=employee.pk %}">Edit</a>
+                    <a href="{% url 'employee_delete' pk=employee.pk %}">Delete</a>
+                    <a href="{% url 'employee_detail' pk=employee.pk %}">View Details</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{% url 'employee_create' %}">Add Employee</a>
+</body>
+</html>

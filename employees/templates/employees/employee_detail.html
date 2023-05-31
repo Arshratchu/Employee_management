@@ -1,0 +1,33 @@
+<!-- employees/employee_detail.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Detail</title>
+</head>
+<body>
+    <h1>Employee Detail</h1>
+
+    <table>
+        <tr>
+            <th>First Name:</th>
+            <td>{{ employee.first_name }}</td>
+        </tr>
+        <tr>
+            <th>Last Name:</th>
+            <td>{{ employee.last_name }}</td>
+        </tr>
+        <tr>
+            <th>Mobile:</th>
+            <td>{{ employee.mobile }}</td>
+        </tr>
+        <tr>
+            <th>Email:</th>
+            <td>{{ employee.email }}</td>
+        </tr>
+    </table>
+
+    <a href="{% url 'employee_update' pk=employee.pk %}">Edit</a>
+    <a href="{% url 'employee_delete' pk=employee.pk %}">Delete</a>
+</body>
+</html>
