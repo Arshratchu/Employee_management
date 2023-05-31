@@ -4,15 +4,22 @@
 <html>
 <head>
     <title>Confirm Delete</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Confirm Delete</h1>
+    <div class="container">
+        <h1 class="mt-4">Confirm Delete</h1>
 
-    <p>Are you sure you want to delete {{ employee.first_name }} {{ employee.last_name }}?</p>
+        <p class="mt-4">Are you sure you want to delete {{ employee.first_name }} {{ employee.last_name }}?</p>
 
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">Delete</button>
-    </form>
+        <form method="post">
+            {% csrf_token %}
+            <button class="btn btn-danger" type="submit">Delete</button>
+        </form>
+    </div>
+
+    <!-- Add Bootstrap JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 </html>
